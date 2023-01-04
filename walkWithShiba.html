@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js sample</title>
+		<link rel="stylesheet" href="style.css">
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #qp {
+        float: right;
+      }
+      #move2 {
+        transform: translateX(-100px);
+      }
+      #move3 {
+        transform: translateX(-200px);
+      }
+      #move4 {
+        transform: translateX(-400px);
+      }
+    </style>
+	</head>
+<body>
+  <h2>TewwnMax 테스트 <span id="qq"></span></h2>
+  <button onclick="mm()" id="qp">이동</button>
+  <img  id="move" src="images/shiba.jpg" onmouseover="mm()" width="100px" height="100px">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+  <script>
+    function mm() {
+      var count = parseInt(Math.random()*500);
+      var count2 = parseInt(Math.random()*500);
+      var att = count+"px";
+      var att2 = count2+"px";
+      document.querySelector("#qq").innerHTML = "X 좌표: "+count+ ", Y 좌표: "+count2;
+      TweenMax.to('#move', 0.3, {x: att});
+      TweenMax.to('#move', 0.3, {y: att2});
+    }
+  </script>
+</body>
+</html>
